@@ -4,6 +4,7 @@ Videogioco creato con Unity e con l'utilizzo di C#
 Spiegazione generale del progetto
 
 Icona e Splash Screen
+
 Ho creato una splash screen tramite Canva e scaricato una icona da internet, per poi inserirle attraverso i settaggi forniti da Unity.
 
 Scopo del gioco
