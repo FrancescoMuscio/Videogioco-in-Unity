@@ -3,16 +3,16 @@ Videogioco creato con Unity e con l'utilizzo di C#
 
 Spiegazione generale del progetto
 
-Icona e Splash Screen
+*Icona e Splash Screen*
 
 Ho creato una splash screen tramite Canva e scaricato una icona da internet, per poi inserirle attraverso i settaggi forniti da Unity.
 
-Scopo del gioco
+*Scopo del gioco*
 
 Lo scopo del gioco è quello di comandare un cavaliere (Agro) e di andare avanti nel dungeon per sconfiggere il boss. Lungo il tragitto si possono trovare delle monete raccoglibili e dei cuori che vanno a ripristinare un po' di salute se serve. Il gioco tiene traccia dei tentativi fatti (partite giocate, si resetta all’uscita del gioco), e di uno score che progredisce in base a quanti nemici vengono sconfitti. Il gioco presenta tre diverse difficoltà: Facile, Normale e Difficile (si andrà a variare la salute dei nemici, rendendo così il gioco più impegnativo in caso di difficoltà maggiore). Il gioco è in 2D con visuale isometrica.
 
 
-Menu
+*Menu*
 
 Il mene del gioco presenta varie voci:
 •	Nuova partita: permette di iniziare una nuova partita. Verremo portati in un’altra schermata, dove sarà possibile scegliere la difficoltà;
@@ -21,7 +21,7 @@ Il mene del gioco presenta varie voci:
 •	Esci: ci porta fuori dal gioco.
 
 
-HUD
+*HUD*
 
 L’HUD del gioco è composto da quattro parti:
 •	Container dei cuori: si trova in alto a sinistra e indica quanta vita ha il nostro personaggio;
@@ -30,36 +30,37 @@ L’HUD del gioco è composto da quattro parti:
 •	Score: si trova in basso a destra e indica il nostro punteggio.
 
 
-Mappe
+*Mappe*
 
 Le mappe sono state create con degli asset trovati online e con l’utilizzo di Tiled.
 
 
-Oggetti raccoglibili/PowerUP
+*Oggetti raccoglibili/PowerUP*
 
 Abbiamo due tipi di oggetti raccoglibili:
 •	Cuori: permettono di ripristinare una parte della nostra salute. Se la nostra salute è al massimo non sarà possibile raccoglierli, ma, se il nostro personaggio prendesse del danno in futuro, potrebbe sempre tornare indietro a raccoglierlo (il cuore rimane lì per tutta la durata del gioco);
 •	Monete: possono essere raccolte e inserite in un inventario virtuale. Essendo una demo non ho implementato un vero e proprio utilizzo, ma, in un gioco completo, potrebbero essere utilizzate in un negozio, oppure, potrebbero essere un requisito per passare in un’altra area (Es: “Devi avere 50 monete per attraversare questo ponte”).
 
 
-Score
+*Score*
 
 Si aggiorna in base ai nemici che sconfiggiamo, ma, essendo una demo, è altamente probabile che ogni partita finisca sempre con lo stesso score (essendoci pochi nemici). In un gioco completo potrebbero essere inseriti dei nemici in punti nascosti e diversi tra loro (magari cambiando anche l’assegnazione dei punti in base al nemico).
 
 
-Menu di pausa
+
+*Menu di pausa*
 
 Il menu di pausa (attivabile col tasto “escape”) ci permette di riprendere la partita o di tornare al menu principale del gioco.
 
 
-Schermata di Game Over/Vittoria
+*Schermata di Game Over/Vittoria*
 
 Abbiamo due casi:
 •	Sconfitta: se siamo in questo caso vuol dire che la salute del nostro personaggio è scesa fino a zero, e di conseguenza apparirà la schermata di “Game Over”, che ci permetterà di tornare al menu principale;
 •	Vittoria: se siamo in questo caso vuol dire che abbiamo sconfitto il boss del gioco, e, di conseguenza, apparirà la schermata di “Vittoria” che ci permetterà di tornare al menu principale.
 
 
-Salute dei nemici e difficoltà
+*Salute dei nemici e difficoltà*
 
 
 La salute dei nemici viene inizializzata attraverso un “ScriptableObject” e modificata con uno script in base alla difficoltà. L’uso dello ScriptableObject permette in modo veloce di assegnare la stessa quantità di vita a nemici simili tra loro (ad esempio i nemici del primo mondo di un gioco potrebbero avere tutti la stessa vita, anche se sono visivamente diversi tra loro. Lo si può vedere come una salute di base). Abbiamo tre diverse difficoltà:
@@ -68,7 +69,7 @@ La salute dei nemici viene inizializzata attraverso un “ScriptableObject” e 
 •	Difficile: la salute iniziale  dei nemici viene aumentata del 100%.
 
 
-Nemici
+*Nemici*
 
 
 I nemici del gioco sono stati creati con degli asset trovati online, ma le animazioni sono state fatte da zero. La loro eliminazione sarà seguita da un’animazione di morte (“Death Effect” in gioco). I nemici sono gestiti dagli script ed è possibile gestire:
@@ -82,7 +83,7 @@ I nemici del gioco sono stati creati con degli asset trovati online, ma le anima
 •	Chase e Attack radius: indicano il raggio d’azione del nemico (inseguimento e attacco).
 
 
-Personaggio
+*Personaggio*
 
 
 Il personaggio del gioco è stato creato con degli asset trovati online, ma le animazioni sono state fatte da zero. La sua eliminazione sarà seguita da un’animazione di morte (“Death Effect” in gioco). Il personaggio è gestito dagli script ed è possibile gestire:
@@ -92,7 +93,7 @@ Il personaggio del gioco è stato creato con degli asset trovati online, ma le a
 •	Knockback: possiamo decidere quanto danno fa il nostro personaggio, il lasso di tempo per il quale il nostro nemico si troverà nello stato di stagger, e quanto deve essere potente la spinta causata dal nostro attacco (N.B: ho voluto applicare il knockback anche al contatto con un nemico, e non solo all’attacco, perché l’ho voluto pensare come un attacco corpo a corpo con il quale colpisci il nemico, ma a discapito di perdere vita).
 
 
-ScriptableObject
+*ScriptableObject*
 
 
 Gli ScriptableObject sono degli oggetti che possono essere facilmente riutilizzabili in più posti. I tipi che ho realizzato per questi oggetti sono:
@@ -108,7 +109,7 @@ Di seguito gli ScriptableObject che ho realizzato:
 •	PlayerInventory: è di tipo Inventory e tiene traccia delle cose che troviamo all’interno dell’inventario del personaggio.
 
 
-Script
+*Script*
 
 
 Di seguito vengono elencati i vari script creati per realizzare il progetto.
